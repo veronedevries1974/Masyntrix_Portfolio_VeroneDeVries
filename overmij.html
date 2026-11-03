@@ -8,7 +8,7 @@
         <meta name="author" content="VeroneDeVries">
         <title>Masyntrix | VeroneDeVries | Developer</title>
 
-<!-- Bootstrap -->
+<!-- Bootstrap inladen boven <style> :root zodat eigen CSS overschrijft -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -34,37 +34,29 @@
             body {
                 font-family: "JetBrains Mono", monospace; /*Google Font*/
                 font-weight: 400; 
+                background-color: var(--bs-body-bg); /* Bootstrap overschrijven */
             }
 
-            /* Bootstrap overschrijven met root i.p.v. .html werkt in elk doctype/ theme-dark ook in html-tag */
-            /* LIGHT MODUS */
-            :root {
+            /* Bootstrap overschrijven met root */
+           :root {
                 --bs-primary: #00f0ff;        
                 --bs-primary-rgb: 0, 240, 255;
-                --bs-secondary: #3f1a4d;      
-                --bs-secondary-rgb: 63, 26, 77;
-                --bs-dark: #05050a;           
-                --bs-dark-rgb: 5, 5, 10;
-                --bs-info: #7b2cbf;           
-                --bs-info-rgb: 123, 44, 191;
-                --bs-body-bg: #f7f4eb;        
-                --bs-body-color: #3f1a4d; 
-                --bs-link-color: #7b2cbf;
-                --bs-link-hover-color: #ff007f;
+                --bs-secondary: #511e7e;      
+                --bs-secondary-rgb: 81, 30, 126;
+                --bs-info: #e600db;             
+                --bs-info-rgb: 230, 0, 219;
+                --bs-body-bg: #511e7e;          
+                --bs-dark: #020412;           
+                --bs-dark-rgb: 2, 4, 18;        
+                --bs-body-color: #f7f4eb;      
+                --bs-link-color: #e600db;       
+                --bs-link-hover-color: #00f0ff; 
             }
-
-            /* DARK MODUS d*/
-            [data-bs-theme="dark"] {
-                --bs-body-bg: #7b2cbf;       
-                --bs-body-color: #f7f4eb;     
-                --bs-link-color: #f7f4eb;
-                --bs-link-hover-color: #ff007f;
-            }
-
+            
             /* Styling navigatie */
             .navbar-dark .navbar-brand,
             nav.navbar-dark .navbar-nav .nav-link {
-                color: var(--bs-info); 
+                color: var(--bs-link-color); 
                 font-weight: bold;
                 opacity: 0.9;
                 transition: all 0.3s ease; 
@@ -97,6 +89,7 @@
             h1, h2 {
                 color: #00f0ff !important; 
             }
+
             /* Styling afbeelding binnen card bij hoover in/uitzoomen */
             .card-zoom-container {
                 overflow: hidden;
@@ -120,7 +113,7 @@
             <!-- expand=lg-scherm horizontaal dark=(overschreven)kleur bb-bt=lijn padding-x=3 aria=screenreader -->
                 <a class="navbar-brand d-inline-flex align-items-center fs-6 fs-xl-5" href="https://masyntrix.com">
                     <img src="images/masyntrix.jpg" alt="Masyntrix Logo" style="height: 1.8em; width: auto;" class="d-inline-block me-2">
-                    [ Masyntrix.com | VeroneDeVries | Developer ]
+                    [ Masyntrix.com | Websites | Webapps & IoT ]
                 </a>
                 <!-- brand=merktekst+logo display-inline-flex=op één lijn align-items-center=gecentreerd fontsize op xl kleiner color=overschreven opacity=transparantie style=schaalt mee-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Navigatiemenu in- of uitklappen">
@@ -137,35 +130,26 @@
                         <li class="nav-item"><a class="nav-link active" href="overmij.html">Over mij</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
-        
-                    <!-- Light/Dark Mode knop -->
-                    <button id="themeToggler" class="btn btn-outline-info ms-lg-3 mt-2 mt-lg-0" aria-label="Wissel tussen donker en licht thema">
-                        <!-- ms-lg-3 zorgt voor afstand op desktop, mt-2 en mt-lg-0 lijnt hem verticaal netjes uit -->
-                        🌓
-                    </button>
                 </div>
             </nav>
 
 <!-- Header -->
-            <header class="py-5" style="background-color: var(--bs-dark);">
-            <!-- py-5=boven/onder padding bb-bt=onderlijn style=CSS overschrijft Bootstrap -->
-                <div class="container my-5">
+            <header class="py-2" style="background-color: var(--bs-dark);">
+            <!-- py-5=boven/onder padding style=CSS overschrijft Bootstrap -->
+                <div class="container my-2">
                 <!-- nested container header met daarbinnen row-cols -->
                     <div class="row align-items-center">
                     <!-- row=bootstrapgrid align-items-center=verticale gecentreerde uitlijning-->
                         <div class="col-lg-6 text-center text-lg-start">
                             <!-- col-lg-6=op pc linkerhelft 6/12 voor titel text-lg-start=op pc links uitgelijnd -->
-                            <span class="text-info small fw-bold">[ PORTFOLIO ]</span>
+                            <span class="text-info xxl fw-bold">PORTFOLIO | independent student</span>
                             <h1 class="display-4 fw-bold mt-2">VERONE</h1><h1 class="display-4 fw-bold mt-2">DEVRIES</h1>
                             <!-- display-4=grote titel text-info=css overschrijft bootstrap -->
-                            <p class="lead my-3" style="color: var(--bs-primary); opacity: 0.9;">Software Developer in opleiding</p>
-                            <p class="small text-info"><em>independent student</em></p>
-                            <!-- lead=grotere subtekst style=CSS overschrijft Bootstrap opacity=transparantie -->
                         </div>
-                       
+                        <!-- profielfoto -->
                         <div class="col-lg-6 mt-5 mt-lg-0 d-flex justify-content-center"> 
                         <!-- d-flex en justify-content-center=midden gecentreerd -->
-                            <div class="d-flex align-items-center justify-content-center rounded border border-tech" style="width: 300px; height: 300px; background-color: var(--bs-body-bg);"> 
+                            <div class="d-flex align-items-center justify-content-center rounded border border-tech" style="width: 200px; height: 200px; background-color: var(--bs-body-bg);"> 
                                 <img src="images\profielfoto.jpg" alt="Profielfoto Verone de Vries" class="w-100 h-100 object-fit-cover rounded fs-5 text-body opacity-75"> 
                             </div> 
                         </div>
@@ -173,83 +157,118 @@
                 </div> 
             </header>
 <!--Main-->
-            <main class="py-5 bg-dark" style="border-top: 1px solid rgba(247, 244, 235, 0.15);">
+            <main class="py-2 bg-dark" style="background-color: var(--bs-dark);">
             <!-- padding=verticaal niveau 5 style= CSS op element is overschrijving intern en bootstrap-->
-                <div class="container mb-5 text-center text-lg-start">
-                <!-- nested container voor main zonder row-cols -->
-                    <div class="p-4 rounded border-tech" style="background-color: var(--bs-dark);">
-                        <h2 class="h2 mb-3">Welkom op mijn PORTFOLIO</h2>
-                        <h4 class="h4 fw-bold text-info mb-3">Overzicht van mijn projecten, vaardigheden en ervaringen</h4>
-                        <p class="mb-0 opacity-90" style="color: var(--bs-info); opacity: 0.9;">Deze pagina bevat informatie over mijn opleidingen, werkervaring en hobby's.</p>
+                
+                <!-- afbeelding, titel en subtitel -->
+                <div class="container my-2">
+                    <div class="p-2 rounded border-tech bg-secondary text-white">
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
+                                <div class="d-flex align-items-center justify-content-center rounded border border-tech" style="width: 400px; height: 200px; background-color: var(--bs-dark);"> 
+                                    <img src="images\pexels-negativespace-97077.jpg" alt="Programmeercode" class="w-100 h-100 object-fit-cover rounded opacity-75"> 
+                                </div>
+                            </div>
+                            <div class="col-lg-8 text-center text-lg-start">
+                                <h2 class="h2 mb-3 text-primary">Welkom op mijn PORTFOLIO</h2>
+                                <p class="mb-0 opacity-90 fs-5">Overzicht van mijn werkervaring & opleiding, interesse & hobby</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
     
                 <div class="container my-5">
-                <!-- container=automatische zijmarges my-5=marge boven/onder -->
+                <!-- container=zijmarges en boven/onder -->
                 
-                <h2 class="text-center fw-bold mb-5 text-primary">Over mij</h2>
-                <!-- text-primary=jouw neon roze kleur -->
-
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-10">
-                        
-                        <!-- Sectie 1: Over mij -->
-                        <div class="card bg-secondary text-body border-tech mb-4 p-4 rounded shadow">
-                            <!-- bg-secondary=jouw warme paarse kleur border-tech=crème rand p-4=interne ruimte -->
-                            <div class="card-body">
-                                <h3 class="h5 fw-bold text-primary mb-3">[INTRODUCTIE]</h3>
-                                <p class="mb-0 opacity-90">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-10">
+                            <!-- Sectie 1: Over mij -->
+                            <div class="card bg-secondary text-white border-tech mb-4 p-4 rounded shadow">
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold text-primary mb-3">[INTRODUCTIE]</h3>
+                                    <p class="mb-0 opacity-90">
                                     Hallo! Ik ben Verone de Vries, een gedreven IT-specialist in opleiding. Met mijn merk <strong>Masyntrix</strong> focus ik me op het begrijpen en bouwen van digitale architecturen. Ik hou ervan om complexe problemen te ontleden en om te zetten in werkende, gestroomlijnde oplossingen. Momenteel ontwikkel ik mijn vaardigheden op Niveau 4 om later complexe infrastructuren te kunnen ontwerpen en beheren.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Sectie 2: Werkervaring -->
-                        <div class="card bg-secondary text-body border-tech mb-4 p-4 rounded shadow">
-                            <div class="card-body">
-                                <h3 class="h5 fw-bold text-primary mb-3">[WERVARING & OPLEIDING]</h3>
-                                <ul class="list-unstyled mb-0 opacity-90">
-                                    <li class="mb-3">
-                                        <span class="text-info fw-bold">2026 - Heden</span><br>
-                                        <strong>Masyntrix Portfolio Ontwikkeling</strong><br>
-                                        <small class="text-muted">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
-                                    </li>
-                                    <li>
-                                        <span class="text-info fw-bold">Toekomst</span><br>
-                                        <strong>IT-Opleiding Niveau 4</strong><br>
-                                        <small class="text-muted">Specialisatie in systeembeheer, netwerkarchitectuur en security protocollen.</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Sectie 3: Hobby's -->
-                        <div class="card bg-secondary text-body border-tech p-4 rounded shadow">
-                            <div class="card-body">
-                                <h3 class="h5 fw-bold text-primary mb-3">[INTERESSES & HOBBYS]</h3>
-                                <p class="mb-3 opacity-90">
-                                    Naast mijn studie besteed ik veel tijd aan technologie en creativiteit. Mijn belangrijkste bezigheden zijn:
-                                </p>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge border border-tech text-cream py-2 px-3 bg-dark">#Coding_&_Scripting</span>
-                                    <span class="badge border border-tech text-cream py-2 px-3 bg-dark">#Cyber_Security</span>
-                                    <span class="badge border border-tech text-cream py-2 px-3 bg-dark">#Hardware_Hacking</span>
-                                    <span class="badge border border-tech text-cream py-2 px-3 bg-dark">#Gaming</span>
+                                    </p>
                                 </div>
-                                <!-- d-flex=flexbox gap-2=ruimte tussen badges bg-dark=jouw pure zwart -->
+                            </div>
+
+                            <!-- Sectie 2: Werkervaring -->
+                            <div class="card bg-secondary text-white border-tech mb-4 p-4 rounded shadow">
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold text-primary mb-3">[WERKERVARING]</h3>
+                                    <ul class="list-unstyled mb-0 opacity-90">
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Coding_&_Scripting</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                             <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                             <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                         
+                            <!-- Sectie 3: Opleiding -->    
+                            <div class="card bg-secondary text-white border-tech mb-4 p-4 rounded shadow">
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold text-primary mb-3">[OPLEIDING]</h3>
+                                    <ul class="list-unstyled mb-0 opacity-90">
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
+                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                            <!-- Sectie 4: Interesses en hobby's -->
+                            <div class="card bg-secondary text-white border-tech p-4 rounded shadow">
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold text-primary mb-3">[INTERESSE & HOBBY]</h3>
+                                    <p class="mb-3 opacity-90">
+                                    Naast mijn studie besteed ik veel tijd aan technologie en creativiteit. Mijn belangrijkste bezigheden zijn:
+                                    </p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Coding_&_Scripting</span>
+                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Cyber_Security</span>
+                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Hardware_Hacking</span>
+                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Gaming</span>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </main>
+                    </div> <!-- Einde grid -->
+                </div> <!-- Einde row -->
           
-
-
-            <!-- Footer -->
+<!-- Footer -->
             <footer class="py-4 bg-dark text-center mt-auto">
             <!-- py-4=onder/boven padding bg-dark=achtergrondkleur border-top=lijn bovenkant mt-auto=footer onderkant -->
 
@@ -258,12 +277,12 @@
                     <!-- mb-2=margin bottom height=vaste hoogte opacity=aangepast aan achtergrond -->
                 </div>
                 
-                <p class="mb-0 mt-1 small" style="color: var(--bs-info); opacity: 0.9; font-size: 0.75rem;">
+                <p class="mb-0 mt-1 small" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
                 <!-- margin-bottom=0 text-body=standaard tekstkleur opacity=50% small=kleine tekst -->
-                &copy; 2026 Masyntrix | Ontwikkeld door Verone de Vries
+                &copy; 2026 Masyntrix.com | Ontwikkeld door Verone DeVries
                 </p>
     
-                <p class="mb-0 mt-1 small" style="color: var(--bs-info); opacity: 0.9; font-size: 0.75rem;">
+                <p class="mb-0 mt-1 small" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
                 <!-- margin-bottom=0 margin-top=1 small tekst style=CSS overschrijft Bootstrap fs=font-size meeschalend in rem -->
                 [ status: under construction ]
                 </p>
@@ -271,3 +290,4 @@
         </div>
     </body>
 </html>
+
