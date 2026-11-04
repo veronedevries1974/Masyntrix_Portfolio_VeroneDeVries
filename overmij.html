@@ -103,33 +103,35 @@
                 transform: scale(1) !important;
             }
         </style>
+    </head>
 
-<!-- Body in container-->
     <body>
-        <div class="container-sm"> <!-- aparte div onder body: vanaf 576px 100% breed -->
-            
-<!-- Navigatie met hamburgermenu op mobiel -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-tech px-3" aria-label="Hoofdmenu">
-            <!-- expand=lg-scherm horizontaal dark=(overschreven)kleur bb-bt=lijn padding-x=3 aria=screenreader -->
-                <a class="navbar-brand d-inline-flex align-items-center fs-6 fs-xl-5" href="https://masyntrix.com">
-                    <img src="images/masyntrix.jpg" alt="Masyntrix Logo" style="height: 1.8em; width: auto;" class="d-inline-block me-2">
-                    [ Masyntrix.com | Websites | Webapps & IoT ]
-                </a>
-                <!-- brand=merktekst+logo display-inline-flex=op één lijn align-items-center=gecentreerd fontsize op xl kleiner color=overschreven opacity=transparantie style=schaalt mee-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Navigatiemenu in- of uitklappen">
-                <!-- JavaScript-aansturing buttonclick=#navbarMenu open/dicht-->
-                    <span class="navbar-toggler-icon"></span>
-                    <!-- hamburgermenu icoon -->
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarMenu">
+        <div class="container-fluid px-4 px-sm-0">
+            <!-- navigatie met gridmenu op mobiel -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-tech px-3 py-2" aria-label="Hoofdmenu" style="height: auto;">
+                <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-lg-between p-0" style="width: 100%;">
+                <!-- fluid=volledige breedte d-flex=flexbox column=mobiel lg-row=pc center=gecentreerd between=ruimte verdeeld padding=0 -->
+                    <a class="navbar-brand d-flex flex-column flex-sm-row align-items-center m-0 mb-3 mb-lg-0 text-center text-sm-start" href="https://masyntrix.com" style="white-space: normal; word-break: break-word; max-width: 100%;">
+                    <!-- navbar-brand=logo/tekst d-flex=flexbox column=mobiel sm-row=pc center=gecentreerd mb-lg=geen mb pc sm-start=tekst links pc word-break=tekst netjes afbreken -->
+                    <img src="images/masyntrix.jpg" alt="Masyntrix Logo" style="height: 3em; width: auto;" class="d-inline-block mb-2 mb-sm-0 me-sm-2 flex-shrink-0"> <!-- flex-shrink-0 voorkomt vervorming img -->
+                    <span style="line-height: 1.3;">[ Masyntrix.com | Websites | Apps & IoT ]</span>
+                    </a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Navigatiemenu openen" 
+                    style="border: none; background: transparent; padding: 6px; box-shadow: 0 0 8px #ff007f, 0 0 20px rgba(255, 0, 127, 0.4); outline: none; margin: 0 auto; display: block; border-radius: 4px;">
+                        <svg xmlns="http://w3.org" width="20" height="20" fill="#00f0ff" class="bi bi-grid-fill" viewBox="0 0 16 16" style="display: block;">
+                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarMenu">
                     <!-- collapse=uitklapbaar menu onder knop id= koppeling aan target -->
-                    <ul class="navbar-nav ms-auto">
-                    <!-- nav=zonder opsomming ms-auto=margin-start-auto rechts uitgelijnd -->
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="overmij.html">Over mij</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
+                        <ul class="navbar-nav ms-auto">
+                        <!-- nav=zonder opsomming ms-auto=margin-start-auto rechts uitgelijnd -->
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="overmij.html">Over mij</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
 
@@ -227,24 +229,40 @@
                                     <h3 class="h5 fw-bold text-primary mb-3">[OPLEIDING]</h3>
                                     <ul class="list-unstyled mb-0 opacity-90">
                                         <li class="mb-3">
-                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
-                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
-                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                            <span class="text-primary fw-bold">2026 - present</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Portfolio_Evolution</span><br>
+                                            <small class="opacity-75">Coding websites and apps with Ionic & Angular via VS Code and GitHub</small><br>
+                                            <small class="opacity-75">Training Institute NHA</small>
                                         </li>
                                         <li class="mb-3">
-                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
-                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
-                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                            <span class="text-primary fw-bold">2019 - 2020</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#FiduciaryLogic_ProblemSolving</span><br>
+                                            <small class="opacity-75">Financial Guardianship & Debt Relief Services </small><br>
+                                            <small class="opacity-75">Training Institute Laudius</small>
                                         </li>
                                         <li class="mb-3">
-                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
-                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
-                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                            <span class="text-primary fw-bold">2007 - 2010</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#AnalyticalUpgrade_CriticalThinking</span><br>
+                                            <small class="opacity-75">History</small><br>
+                                            <small class="opacity-75">Universiteit Utrecht</small>
                                         </li>
                                         <li class="mb-3">
-                                            <span class="text-primary fw-bold">2026 - Heden</span><br>
-                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Masyntrix_Portfolio_Ontwikkeling</span><br>
-                                            <small class="opacity-75">Bouwen van web-interfaces en infrastructurele blauwdrukken (Webdesign Les 22).</small>
+                                            <span class="text-primary fw-bold">2003 - 2005</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#OrganizationalWorkDynamics_ClinicalPsychoDiagnostics</span><br>
+                                            <small class="opacity-75">Clinical, Work & Organizational Psychology</small><br>
+                                            <small class="opacity-75">Universiteit Utrecht</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">1997 - 2001</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#HumanFactor_PsychoDiagnostics</span><br>
+                                            <small class="opacity-75">Human Resource Management</small><br>
+                                            <small class="opacity-75">Saxion Deventer</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <span class="text-primary fw-bold">1996 - 1997</span><br>
+                                            <span class="badge border border-tech text-info py-2 px-3 bg-dark">#PsychologyBehavioral_SociologyPerspectives</span><br>
+                                            <small class="opacity-75">Social Work</small><br>
+                                            <small class="opacity-75">Windesheim Zwolle</small>
                                         </li>
                                     </ul>
                                 </div>
@@ -258,36 +276,50 @@
                                     Naast mijn studie besteed ik veel tijd aan technologie en creativiteit. Mijn belangrijkste bezigheden zijn:
                                     </p>
                                 <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Coding_&_Scripting</span>
-                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Cyber_Security</span>
-                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Hardware_Hacking</span>
-                                    <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Gaming</span>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Family_Time</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Short_Getaways</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Fine_Dining_&_Days_Out</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Coding_&_Scripting</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Cyber_Security</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Hardware_Hacking</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Gaming</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Creative_Painting</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Gardening_&_Nature</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Outdoor_Activities</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Lifelong_Learning</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Board_Games</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Movies_&_Streaming</span>
+                                        <span class="badge border border-tech text-info py-2 px-3 bg-dark">#Pet_Love</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- Einde grid -->
-                </div> <!-- Einde row -->
-          
-<!-- Footer -->
-            <footer class="py-4 bg-dark text-center mt-auto">
-            <!-- py-4=onder/boven padding bg-dark=achtergrondkleur border-top=lijn bovenkant mt-auto=footer onderkant -->
-
-                <div class="mb-2">
-                    <img src="images\masyntrix.jpg" alt="Masyntrix mini logo" style="height: 30px; width: auto; opacity: 0.8;">
-                    <!-- mb-2=margin bottom height=vaste hoogte opacity=aangepast aan achtergrond -->
+                    </div>
                 </div>
-                
-                <p class="mb-0 mt-1 small" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
-                <!-- margin-bottom=0 text-body=standaard tekstkleur opacity=50% small=kleine tekst -->
-                &copy; 2026 Masyntrix.com | Ontwikkeld door Verone DeVries
-                </p>
-    
-                <p class="mb-0 mt-1 small" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
-                <!-- margin-bottom=0 margin-top=1 small tekst style=CSS overschrijft Bootstrap fs=font-size meeschalend in rem -->
-                [ status: under construction ]
-                </p>
+            </main>
+                                          
+<!-- Footer -->
+            <footer class="py-4 mt-auto" style="background-color: var(--bs-dark); height: 200px;">
+                <div class="container d-flex flex-column justify-content-between h-100 text-center">
+                    <div>
+                        <img src="images/masyntrix.jpg" alt="Masyntrix mini logo" style="height: 3em; width: auto; opacity: 0.8;">
+                    </div>
+                    <div>
+                        <p class="mb-0" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
+                        &copy; 2026 Masyntrix.com 
+                        </p>
+                        <p class="mb-0" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
+                        Ontwikkeld door Verone DeVries
+                        </p>
+                    </div>
+                    <div class="pt-2 border-top border-secondary border-opacity-25">
+                        <p class="mb-0" style="color: var(--bs-primary); opacity: 0.9; font-size: 0.75rem;">
+                        [ status: under construction ]
+                        </p>
+                    </div>
+                </div>
             </footer>
         </div>
     </body>
 </html>
-
