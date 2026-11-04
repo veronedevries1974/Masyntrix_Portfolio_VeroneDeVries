@@ -149,27 +149,21 @@
                 </div>
             </nav>
 
-<!-- Header -->
-            <header class="py-2" style="background-color: var(--bs-dark);">
-            <!-- py-5=boven/onder padding style=CSS overschrijft Bootstrap -->
-                <div class="container my-2">
-                <!-- nested container header met daarbinnen row-cols -->
-                    <div class="d-flex align-items-center justify-content-start flex-wrap flex-sm-nowrap gap-4">
-                    <!-- row=bootstrapgrid align-items-center=verticale gecentreerde uitlijning-->
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <!-- col-lg-6=op pc linkerhelft 6/12 voor titel text-lg-start=op pc links uitgelijnd -->
-                            <span class="text-info xxl fw-bold">PORTFOLIO | independent student</span>
-                            <h1 class="display-4 fw-bold mt-2">VERONE DEVRIES</h1>
-                            <!-- display-4=grote titel text-info=css overschrijft bootstrap -->
-                        </div>
-                        <!-- profielfoto -->
-                        <div class="col-lg-6 mt-5 mt-lg-0 d-flex justify-content-center"> 
-                        <!-- d-flex en justify-content-center=midden gecentreerd -->
-                            <div class="d-flex align-items-center justify-content-center rounded border border-tech" style="width: 200px; height: 200px; background-color: var(--bs-body-bg);"> 
-                                <img src="images\profielfoto.jpg" alt="Profielfoto Verone de Vries" class="w-100 h-100 object-fit-cover rounded fs-5 text-body opacity-75"> 
-                            </div> 
-                        </div>
-                    </div>
+            <header class="py-2" style="background-color: var(--bs-dark);"> <!-- py-5=boven/onder padding style=CSS overschrijft Bootstrap --> 
+                <div class="container my-2"> <!-- nested container header met daarbinnen row-cols --> 
+                    <!-- OPLOSSING: justify-content-lg-between zorgt voor een perfecte verdeling op pc zonder dat het scherm uitrekt -->
+                    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between gap-4"> <!-- row=bootstrapgrid align-items-center=verticale gecentreerde uitlijning--> 
+                    <div class="text-center text-lg-start"> <!-- col-lg-6 verwijderd om overlap met gap-4 te voorkomen --> 
+                        <span class="text-info xxl fw-bold">PORTFOLIO | independent student</span> 
+                        <h1 class="display-4 fw-bold mt-2">VERONE DEVRIES</h1> <!-- display-4=grote titel text-info=css overschrijft bootstrap --> 
+                    </div> 
+                    <!-- profielfoto --> 
+                    <div class="mt-5 mt-lg-0 d-flex justify-content-center"> <!-- col-lg-6 en w-100 verwijderd zodat de flexbox op pc niet overloopt --> 
+                        <div class="d-flex align-items-center justify-content-center rounded border border-tech" style="width: 200px; height: 200px; background-color: var(--bs-body-bg);"> 
+                        <img src="images\profielfoto.jpg" alt="Profielfoto Verone de Vries" class="w-100 h-100 object-fit-cover rounded fs-5 text-body opacity-75"> 
+                        </div> 
+                    </div> 
+                    </div> 
                 </div> 
             </header>
 
